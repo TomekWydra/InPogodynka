@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pl">
+<head><meta charset="utf-8"><title>InPogodynka</title>
+<link rel="stylesheet" href="newtab.css">
+</head>
+<body>
+<main>
+<header>
+  <div>
+    <h1>InPogodynka</h1>
+    <p id="point">Ładowanie danych…</p>
+    <p id="location" class="location"></p>
+  </div>
+  <button id="refresh">Odśwież</button>
+</header>
+<section id="status"></section>
+<div class="grid">
+  <article><span>Temperatura</span><strong id="temperature">—</strong><small>°C</small></article>
+  <article><span>Ciśnienie</span><strong id="pressure">—</strong><small>hPa</small></article>
+  <article><span>Wilgotność</span><strong id="humidity">—</strong><small>%</small></article>
+  <article   class="air info-box"   tabindex="0"
+  data-tooltip="PM2,5 to cząstki pyłu o średnicy do 2,5 mikrometra. Są bardzo małe i mogą przenikać głęboko do układu oddechowego. Im niższa wartość, tym lepsza jakość powietrza. Orientacyjnie: do 10 µg/m³ — bardzo dobrze, 10–20 — dobrze, 20–25 — umiarkowanie, powyżej 25 — podwyższone stężenie."
+>
+  <span>PM 2,5</span>
+  <strong id="pm25">—</strong>
+  <small>µg/m³</small>
+</article>
+
+<article
+  class="air info-box"
+  tabindex="0"
+  data-tooltip="PM10 to cząstki pyłu o średnicy do 10 mikrometrów. Mogą podrażniać nos, gardło i drogi oddechowe. Orientacyjnie: do 20 µg/m³ — bardzo dobrze, 20–40 — dobrze, 40–60 — umiarkowanie, powyżej 60 — podwyższone stężenie."
+>
+  <span>PM 10</span>
+  <strong id="pm10">—</strong>
+  <small>µg/m³</small>
+</article>
+</div>
+<section class="indices">
+  <div
+    id="eaqi"
+    class="index info-box"
+    tabindex="0"
+    data-tooltip="EAQI ocenia jakość powietrza głównie na podstawie PM2.5. Bardzo dobra i dobra oznaczają niskie stężenie pyłów. Umiarkowana oznacza podwyższone, ale nadal akceptowalne stężenie. Dostateczna oznacza wyraźnie podwyższone stężenie i gorszą jakość powietrza."
+  >
+    EAQI: —
+  </div>
+
+  <div
+    id="paqi"
+    class="index info-box"
+    tabindex="0"
+    data-tooltip="PAQI to uproszczony indeks jakości powietrza. Bardzo dobra i dobra oznaczają korzystne warunki. Umiarkowana oznacza podwyższone stężenia. Dostateczna oznacza gorszą jakość powietrza — osoby wrażliwe powinny ograniczyć długi wysiłek na zewnątrz."
+  >
+    PAQI: —
+  </div>
+</section>
+<section class="extra-sensors">
+  <h2>Dodatkowe czujniki</h2>
+  <div class="grid extra">
+    <article>
+      <span>PM 2,5</span>
+      <strong id="pm1">—</strong>
+      <small>µg/m³</small>
+    </article>
+
+    <article>
+      <span>PM 10</span>
+      <strong id="pm4">—</strong>
+      <small>µg/m³</small>
+    </article>
+
+    <article>
+      <span>NO₂</span>
+      <strong id="no2">—</strong>
+      <small>µg/m³</small>
+    </article>
+
+    <article>
+      <span>O₃</span>
+      <strong id="o3">—</strong>
+      <small>µg/m³</small>
+    </article>
+  </div>
+</section>
+<section class="charts">
+  <h2>Wykresy (24h)</h2>
+  <canvas id="chart"></canvas>
+</section>
+<footer>
+  <a href="popup.html" target="_blank">Ustaw Paczkomat</a>
+  <span id="updated"></span>
+</footer>
+</main>
+<script src="chart.js"></script>
+<script src="newtab.js"></script>
+</body>
+</html>

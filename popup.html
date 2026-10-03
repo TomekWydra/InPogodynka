@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pl">
+<head><meta charset="utf-8"><title>Ustawienia</title>
+<style>
+body{font:14px Arial;padding:18px;width:330px;background:#0f172a;color:#f8fafc}
+label{display:block;margin:12px 0 5px;color:#cbd5e1}
+input{width:100%;padding:9px;border-radius:8px;border:1px solid #475569;background:#1e293b;color:white;box-sizing:border-box}
+button{margin-top:16px;padding:10px 14px;border:0;border-radius:8px;background:#f97316;color:white;font-weight:bold;cursor:pointer}
+small{display:block;color:#94a3b8;margin-top:12px;line-height:1.4}
+</style>
+</head>
+<body>
+<h2>📦 Ustawienia Paczkomatu</h2>
+<label for="url">Adres URL strony InPost</label>
+<input id="url" placeholder="https://inpost.pl/paczkomat-..."/>
+<label for="code">Kod Paczkomatu</label>
+<input id="code" placeholder="np. RWL01BAPP"/>
+<label for="pointId">Point ID (wymagane)</label>
+<input id="pointId" type="number" placeholder="Znajdź w DevTools (F12) → Network"/>
+<button id="save">Zapisz i pobierz dane</button>
+<small>Jak znaleźć Point ID: 1) Otwórz stronę Paczkomatu na inpost.pl 2) Naciśnij F12 3) Zakładka Network 4) Odśwież stronę 5) Znajdź żądanie "air_index_level" 6) Skopiuj liczbę z URL (między "shipx-point-data/" a kodem).</small>
+<script src="popup.js"></script>
+</body>
+</html>
