@@ -1,4 +1,4 @@
-# InPogodynka v1.21.4 - NAPRAWA BŁĘDU SKŁADNI
+# InPogodynka v1.21.4 - działa stablinie
 
 ✅ Poprawiony newtab.js (dodane brakujące nawiasy)
 ✅ Działające pobieranie danych
